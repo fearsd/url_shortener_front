@@ -43,6 +43,15 @@ class App extends Component {
     div.style.display = 'block'
   }
 
+  copyToClipBoard = (e) => {
+    let hiddenInput = document.createElement('input')
+    hiddenInput.style.position = 'absolute'
+    hiddenInput.style.left = '-9999px'
+    hiddenInput.value = this.state.shortUrl
+    document.body.appendChild(hiddenInput)
+    hiddenInput.select()
+    document.execCommand('copy', true)
+  }
   render() {
     return (
       <div className="App">
@@ -52,7 +61,8 @@ class App extends Component {
           <button onClick={(e) => this.shortUrl(e)}>Short</button>
         </form>
         <div id="url">
-          <a href={this.state.shortUrl}>{this.state.shortUrl}</a>
+          <a id="link" href={this.state.shortUrl}>{this.state.shortUrl}</a>
+          <button onClick={(e) => this.copyToClipBoard(e)}>Copy</button>
         </div>
       </div>
     )
