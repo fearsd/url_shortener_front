@@ -17,10 +17,30 @@ class App extends Component {
 
   shortUrl = (e) => {
     e.preventDefault()
+    
+    
+    async function fetchAsync (state) {
+        let req = await fetch('http://localhost:8000/', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              "exact_url": state.url
+            })
+        })
+        let res = req.json()
+        return res
+    }
+
+    fetchAsync(this.state, this.props)
+        .then(res => {
+          this.setState({shortUrl: "http://localhost:8000/" + res.hash_slug})
+        })
+        .catch(reason => console.log(reason.message))
     let div = document.getElementById('url')
     div.style.display = 'block'
-    div.children[0].href = this.state.url
-    div.children[0].innerText = this.state.url
   }
 
   render() {
@@ -32,7 +52,7 @@ class App extends Component {
           <button onClick={(e) => this.shortUrl(e)}>Short</button>
         </form>
         <div id="url">
-          <a href=''>{this.state.shortUrl}</a>
+          <a href={this.state.shortUrl}>{this.state.shortUrl}</a>
         </div>
       </div>
     )
