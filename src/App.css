@@ -28,7 +28,8 @@ form {
 
 input {
   padding: 0;
-  padding-left: 10px;
+  padding-left: 7px;
+  padding-right: 7px;
   width: 250px;
   height: 35px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -64,4 +65,9 @@ button {
 #url {
   display: none;
   margin-top: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
 }

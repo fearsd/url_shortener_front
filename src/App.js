@@ -63,7 +63,7 @@ class App extends Component {
           <button onClick={(e) => this.shortUrl(e)}>Short</button>
         </form>
         <div id="url">
-          <a id="link" href={this.state.shortUrl}>{this.state.shortUrl}</a>
+          <a id="link" href={this.state.shortUrl} target="_blank">{this.state.shortUrl}</a>
           <button onClick={(e) => this.copyToClipBoard(e)}>Copy</button>
         </div>
       </div>
