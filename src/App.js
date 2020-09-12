@@ -12,13 +12,13 @@ class App extends Component {
   }
 
   handleUrlChange(e) {
+    let div = document.getElementById('url')
+    div.style.display = 'none'
     this.setState({url: e.target.value})
   }
 
   shortUrl = (e) => {
     e.preventDefault()
-    
-    
     async function fetchAsync (state) {
         let req = await fetch('http://localhost:8000/', {
             method: 'POST',
@@ -51,7 +51,9 @@ class App extends Component {
     document.body.appendChild(hiddenInput)
     hiddenInput.select()
     document.execCommand('copy', true)
+    hiddenInput.remove()
   }
+
   render() {
     return (
       <div className="App">
