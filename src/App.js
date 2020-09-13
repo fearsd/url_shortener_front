@@ -59,11 +59,11 @@ class App extends Component {
       <div className="App">
         <h1>URL shortener</h1>
         <form>
-          <input type="text" value={this.state.url} onInput={(e) => this.handleUrlChange(e)} placeholder="Enter your url"></input>
+          <input type="text" defaultValue={this.state.url} onInput={(e) => this.handleUrlChange(e)} placeholder="Enter your url"></input>
           <button onClick={(e) => this.shortUrl(e)}>Short</button>
         </form>
         <div id="url">
-          <a id="link" href={this.state.shortUrl} target="_blank">{this.state.shortUrl}</a>
+          <a id="link" href={this.state.shortUrl} target="_blank" rel="noopener noreferrer">{this.state.shortUrl}</a>
           <button onClick={(e) => this.copyToClipBoard(e)}>Copy</button>
         </div>
       </div>
