@@ -1,5 +1,5 @@
 # url_shortener_front
-## This repository is frontend of the url shortener service. Backend is located [there](https://github.com/fearsd/url_shortener)
+This repository is frontend of the url shortener service. Backend is located [there](https://github.com/fearsd/url_shortener)
 
 ## Available Scripts
 
@@ -43,7 +43,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Steps to run
 
-### `$ git clone https://github.com/fearsd/url_shortener_front.git`
-### `$ cd url_shortener_front`
-### `$ npm install`
-### `$ npm start`
+`$ git clone https://github.com/fearsd/url_shortener_front.git`
+`$ cd url_shortener_front`
+`$ npm install`
+`$ npm start`
